@@ -1,15 +1,86 @@
-body
-    min-height: 100vh
+@use 'mixins'
+@use 'variables'
 
-    display: grid
-    grid-template-columns: 1fr 1fr
-
+*
     margin: 0
     padding: 0
     box-sizing: border-box
     transition: .4s
+
+body
+    @include mixins.flex($wrap:false, $center:true)
+    background-color: variables.$White
+    min-height: 100vh
     font-family: 'Spartan', sans-serif
 
-.profiles
-    grid-column-start: -3
-    grid-column-end: -1
+.main-content
+    width: fit-content
+
+    .top-content
+        @include mixins.flex($wrap:true, $center:false)
+
+        header
+            max-width: 525px
+
+        .ratings
+            @include mixins.flex($wrap:false,$center:true)
+            flex-direction: column
+            gap: 15px
+            padding: 15px 0px
+            min-width: 525px
+            span
+                padding: 30px 10px
+                background-color: variables.$Light-Grayish-Magenta
+
+    #first-profile
+        margin-bottom: 30px
+
+    #second-profile
+        margin-top: 15px
+        margin-bottom: 15px
+
+    #third-profile
+        margin-top: 30px
+
+    .profiles
+        width: fit-content
+        @include mixins.flex($wrap:true, $center:false)
+        gap: 20px
+        .profile
+            display: flex
+            flex-direction: column
+            gap: 25px
+
+            max-width: 330px
+            padding: 35px 25px
+
+            border-radius: 10px
+            background-color: variables.$Very-Dark-Magenta
+
+            p,span
+                font-size: 0.794rem
+
+            &-top
+                display: flex
+                gap: 20px
+                img
+                    width: 40px
+                    height: 40px
+                    border-radius: 50%
+
+                .name-status
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    flex-direction: column
+                    .name
+                        font-weight: bold
+                        color: variables.$White
+
+                    .status
+                        color: variables.$Soft-Pink
+
+            .comment
+                color: variables.$White
+                line-height: 1.55
+                letter-spacing: 0.004rem

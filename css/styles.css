@@ -1,17 +1,98 @@
-body {
-  min-height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   transition: 0.4s;
+}
+
+body {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  min-height: 100vh;
   font-family: "Spartan", sans-serif;
 }
 
-.profiles {
-  grid-column-start: -3;
-  grid-column-end: -1;
+.main-content {
+  width: fit-content;
+}
+.main-content .top-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+.main-content .top-content header {
+  max-width: 525px;
+}
+.main-content .top-content .ratings {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+  padding: 15px 0px;
+  min-width: 525px;
+}
+.main-content .top-content .ratings span {
+  padding: 30px 10px;
+  background-color: #f7f2f7;
+}
+.main-content #first-profile {
+  margin-bottom: 30px;
+}
+.main-content #second-profile {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.main-content #third-profile {
+  margin-top: 30px;
+}
+.main-content .profiles {
+  width: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.main-content .profiles .profile {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  max-width: 330px;
+  padding: 35px 25px;
+  border-radius: 10px;
+  background-color: #502050;
+}
+.main-content .profiles .profile p, .main-content .profiles .profile span {
+  font-size: 0.794rem;
+}
+.main-content .profiles .profile-top {
+  display: flex;
+  gap: 20px;
+}
+.main-content .profiles .profile-top img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.main-content .profiles .profile-top .name-status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.main-content .profiles .profile-top .name-status .name {
+  font-weight: bold;
+  color: white;
+}
+.main-content .profiles .profile-top .name-status .status {
+  color: #ee68a4;
+}
+.main-content .profiles .profile .comment {
+  color: white;
+  line-height: 1.55;
+  letter-spacing: 0.004rem;
 }
 
 /*# sourceMappingURL=styles.css.map */
