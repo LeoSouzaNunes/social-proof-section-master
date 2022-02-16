@@ -12,6 +12,10 @@ body
     background-color: variables.$White
     min-height: 100vh
     font-family: 'Spartan', sans-serif
+    background-image: url('../images/bg-pattern-top-desktop.svg'), url('../images/bg-pattern-bottom-desktop.svg')
+    background-repeat: no-repeat
+    background-position: left top, right bottom
+    background-size: auto, 75%
 
 .main-content
     width: fit-content
@@ -20,7 +24,19 @@ body
         @include mixins.flex($wrap:true, $center:false)
 
         header
-            max-width: 525px
+            width: 500px
+
+            h1
+                font-size: 2.75rem
+                line-height: 2.75rem
+                color: variables.$Very-Dark-Magenta
+
+            p
+                padding: 15px 0px
+                color: variables.$Dark-Grayish-Magenta
+                line-height: 1.3rem
+                font-weight: 500
+                font-size: .9rem
 
         .ratings
             @include mixins.flex($wrap:false,$center:true)
@@ -28,9 +44,36 @@ body
             gap: 15px
             padding: 15px 0px
             min-width: 525px
-            span
-                padding: 30px 10px
+
+            div
+                @include mixins.flex($wrap:true, $center:false)
+                justify-content: space-between
+                align-items: center
+
+                width: 80%
+                height: 55px
+                padding: 10px 25px
+                padding-right: 50px
                 background-color: variables.$Light-Grayish-Magenta
+                border-radius: 10px
+
+                color: variables.$Very-Dark-Magenta
+                font-size: .8rem
+                font-weight: 700
+
+                .star-icon
+                    width: 50px
+                    height: 20px
+                    @include mixins.flex($wrap:false, $center:false)
+                    justify-content: left
+                    align-content: center
+                    gap: 5px
+            .first
+                margin-right: auto
+
+            .last
+                margin-left: auto
+                    
 
     #first-profile
         margin-bottom: 30px
@@ -43,8 +86,9 @@ body
         margin-top: 30px
 
     .profiles
-        width: fit-content
-        @include mixins.flex($wrap:true, $center:false)
+        @include mixins.flex($wrap:true, $center:true)
+        align-items: center
+        margin-top: 50px
         gap: 20px
         .profile
             display: flex
@@ -83,4 +127,5 @@ body
             .comment
                 color: variables.$White
                 line-height: 1.55
+                font-weight: 500
                 letter-spacing: 0.004rem

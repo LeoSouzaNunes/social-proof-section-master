@@ -13,6 +13,10 @@ body {
   background-color: white;
   min-height: 100vh;
   font-family: "Spartan", sans-serif;
+  background-image: url("../images/bg-pattern-top-desktop.svg"), url("../images/bg-pattern-bottom-desktop.svg");
+  background-repeat: no-repeat;
+  background-position: left top, right bottom;
+  background-size: auto, 75%;
 }
 
 .main-content {
@@ -23,7 +27,19 @@ body {
   flex-wrap: wrap;
 }
 .main-content .top-content header {
-  max-width: 525px;
+  width: 500px;
+}
+.main-content .top-content header h1 {
+  font-size: 2.75rem;
+  line-height: 2.75rem;
+  color: #502050;
+}
+.main-content .top-content header p {
+  padding: 15px 0px;
+  color: #937b92;
+  line-height: 1.3rem;
+  font-weight: 500;
+  font-size: 0.9rem;
 }
 .main-content .top-content .ratings {
   display: flex;
@@ -35,9 +51,35 @@ body {
   padding: 15px 0px;
   min-width: 525px;
 }
-.main-content .top-content .ratings span {
-  padding: 30px 10px;
+.main-content .top-content .ratings div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  height: 55px;
+  padding: 10px 25px;
+  padding-right: 50px;
   background-color: #f7f2f7;
+  border-radius: 10px;
+  color: #502050;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+.main-content .top-content .ratings div .star-icon {
+  width: 50px;
+  height: 20px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: left;
+  align-content: center;
+  gap: 5px;
+}
+.main-content .top-content .ratings .first {
+  margin-right: auto;
+}
+.main-content .top-content .ratings .last {
+  margin-left: auto;
 }
 .main-content #first-profile {
   margin-bottom: 30px;
@@ -50,9 +92,10 @@ body {
   margin-top: 30px;
 }
 .main-content .profiles {
-  width: fit-content;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  margin-top: 50px;
   gap: 20px;
 }
 .main-content .profiles .profile {
@@ -92,6 +135,7 @@ body {
 .main-content .profiles .profile .comment {
   color: white;
   line-height: 1.55;
+  font-weight: 500;
   letter-spacing: 0.004rem;
 }
 
